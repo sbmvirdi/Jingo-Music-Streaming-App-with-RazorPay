@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Portfolio">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="200dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/developer"
+        android:id="@+id/developer"
+        android:layout_centerHorizontal="true"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shubam Virdi\n Android Developer"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/developer"
+            android:fontFamily="@font/overpass_semibold"
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/specs"
+            android:textColor="#000"
+            />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Resume"
+            android:id="@+id/resume"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/specs"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/overpass_semibold"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:background="@drawable/mustardbackground"/>
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
