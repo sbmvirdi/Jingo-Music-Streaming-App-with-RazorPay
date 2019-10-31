@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.shubamvirdi.jingo.Adapters.MyAdapter;
 import com.shubamvirdi.jingo.DataModels.JingoModel;
 import com.shubamvirdi.jingo.Interfaces.GetdataService;
@@ -23,6 +24,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rec;
     private Button portfolio;
+    private ShimmerFrameLayout sfl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +34,11 @@ public class MainActivity extends AppCompatActivity {
         // Binding Views with thier Respective Id's
         rec = findViewById(R.id.musicRecyclerView);
         portfolio = findViewById(R.id.portfolio);
-
+        sfl = findViewById(R.id.shimmer);
         rec.setLayoutManager(new LinearLayoutManager(this));
         rec.setHasFixedSize(true);
-
+        rec.setVisibility(View.GONE);
+        sfl.startShimmer();
         // Fetching Data from the API using Retrofit
 
         GetdataService service = RetrofitInstance.getInstance().create(GetdataService.class);
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<JingoModel>>() {
             @Override
             public void onResponse(Call<List<JingoModel>> call, Response<List<JingoModel>> response) {
+                rec.setVisibility(View.VISIBLE);
+                sfl.setVisibility(View.GONE);
                 MyAdapter myAdapter = new MyAdapter(getApplicationContext(),response.body());
                 rec.setAdapter(myAdapter);
             }

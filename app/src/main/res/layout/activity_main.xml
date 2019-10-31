@@ -6,6 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_below="@id/imageview"
+        android:id="@+id/shimmer"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <include layout="@layout/shimmerlayout"
+            android:id="@+id/l1"/>
+        <include layout="@layout/shimmerlayout"
+            android:id="@+id/l2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/l1"/>
+            <include layout="@layout/shimmerlayout"
+                android:id="@+id/l3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/l2"/>
+            <include layout="@layout/shimmerlayout"
+                android:id="@+id/l4"
+                android:layout_height="140dp"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/l3"/>
+        </RelativeLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"

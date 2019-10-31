@@ -33,6 +33,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.razorpay:checkout:1.5.12'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'androidx.cardview:cardview:1.0.0'
 
