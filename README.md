@@ -7,3 +7,4 @@
 3. Play Sample Songs
 4. Disc like Animation when song plays
 5. Great UI/UX for Song CardView
+6. Seamless Networking using Retrofit Library
